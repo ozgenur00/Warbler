@@ -1,0 +1,17 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Liked Messages by @{{ user.username }}</h2>
+
+<div class="liked-messages">
+    {% for message in liked_messages %}
+    <div class="message">
+        <p>{{ message.text }}</p>
+        <small>Liked on: {{ message.timestamp }}</small>
+    </div>
+    {% else %}
+    <p>No messages liked yet.</p>
+    {% endfor %}
+</div>
+
+{% endblock %}
